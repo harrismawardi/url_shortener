@@ -16,18 +16,18 @@
     <div>
       {% if messages %}
         {% for message in messages %}
-            <section id="alert">{{ message }}</section>
+            <section id="alert"><a href="{{ message }}">{{ message }}</a></section>
         {% endfor %}
     {% endif %}
     </div>
 </div>
 
-  {% if new_url %}
+  <!-- {% if new_url %}
 
   <div>
     <h2>Your shortened Url</h2>
     <p>{{new_url}}</p>
   </div>
-  {% endif %}
+  {% endif %} -->
 </div>
 {% endblock body %}

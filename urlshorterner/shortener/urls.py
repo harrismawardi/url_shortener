@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('<str:short_url>/', views.redirect, name='redirect')
+    path('<str:short_url>/', views.url_redirect, name='redirect')
 ]
