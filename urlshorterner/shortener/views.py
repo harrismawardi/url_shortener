@@ -17,12 +17,12 @@ def home(req):
     data = {'form': form}
     return render(req, 'home.html', data)
 
-# def url_redirect(req, short_url):
-#     try:
-#         shortener = Shortener.objects.get(short_url=short_url) 
-#         return redirect(shortener.long_url)
-#     except:
-#         return redirect(req.build_absolute_uri('/') + 'api/')
+def url_redirect(req, short_url):
+    try:
+        shortener = Shortener.objects.get(short_url=short_url) 
+        return redirect(shortener.long_url)
+    except:
+        return redirect(req.build_absolute_uri('/') + 'api/')
 
 def not_found_404(req, exception):
     return render(req, '404.html')
