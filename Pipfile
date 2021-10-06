@@ -7,6 +7,13 @@ name = "pypi"
 django = "*"
 pytest = "*"
 pytest-cov = "*"
+pytest-django = "*"
+coverage = "*"
+
+[scripts]
+test = "python manage.py test"
+coverage = "coverage run --source='.' manage.py test shortener"
+coverage-report = "coverage report"
 
 [dev-packages]
 

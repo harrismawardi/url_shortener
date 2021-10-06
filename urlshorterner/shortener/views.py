@@ -1,5 +1,4 @@
-from django.http.response import HttpResponse
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import Shortener
 from .forms import ShortenerForm
@@ -24,3 +23,9 @@ def url_redirect(req, short_url):
         return redirect(shortener.long_url)
     except:
         return redirect(req.build_absolute_uri('/') + 'api/')
+
+def not_found_404(req, exception):
+    return render(req, '404.html')
+
+def server_error_500(req):
+    return render(req, '500.html')
